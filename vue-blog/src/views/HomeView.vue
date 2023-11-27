@@ -1,0 +1,8 @@
+<script setup>
+// import TheWelcome from '../components/TheWelcome.vue'
+import Intro from '../components/Intro.vue'
+</script>
+
+<template>
+  <Intro />
+</template>
