@@ -17,11 +17,34 @@
         <p class="article">작성 시간</p>
       </div>
     </div>
+    <div class="new_pjt">
+      <p>PROJECT!</p>
+      <swiper
+      :slidesPerView="2"
+      :centeredSlides="true"
+      :spaceBetween="30"
+      :pagination="{
+        clickable: true,
+      }"
+      :modules="modules"
+      class="mySwiper"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide><swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide><swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide><swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide><swiper-slide>Slide 9</swiper-slide>
+      </swiper>
+    </div>
   </section>
 </template>
 
 
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Pagination } from 'swiper/modules';
+
 
 </script>
 
@@ -39,7 +62,8 @@
       box-shadow: 5px 5px 5px rgba(189, 189, 189, 0.2);
       width: 300px;
       height: 300px;
-      background-color: violet;
+      background-color: whitesmoke;
+      padding: 20px;
       .photo {
         width: 200px;
         height: 200px;
@@ -53,16 +77,17 @@
     }
     .introduce_txt {
       width: 800px;
-      background-color: rgb(236, 49, 49);
+      background-color: whitesmoke;
       box-shadow: 5px 5px 5px rgba(189, 189, 189, 0.2);
       border-radius: 20px;
     }
   }
   .new_article {
     background-color: tan;
-    p {
-      font-size: 30px;
-    }
+    padding: 50px;
+    // p {
+    //   font-size: 30px;
+    // }
     .article_box {
       .article_phpto {
         width: 100%;
@@ -70,8 +95,22 @@
         background-color: yellowgreen;
       }
       width: 20%;
-      height: 500px;
+      height: 400px;
       border: 1px solid rgb(235, 235, 235);
+    }
+  }
+  .new_pjt {
+    background-color: yellow;
+    padding: 50px;
+    .swiper {
+      height: 500px;
+      .swiper-slide {
+        width: 30%;
+        background-color: turquoise;
+      }
+      .swiper-slide:hover {
+        border: 1px solid black;
+      }
     }
   }
 }
