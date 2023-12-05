@@ -67,7 +67,6 @@ import { Pagination } from 'swiper/modules';
       .photo {
         width: 200px;
         height: 200px;
-        background-color: yellow;
         border-radius: 100%;
         background-image: url(../assets/logo.svg);
         background-repeat: no-repeat;
@@ -92,7 +91,6 @@ import { Pagination } from 'swiper/modules';
       .article_phpto {
         width: 100%;
         height: 300px;
-        background-color: yellowgreen;
       }
       width: 20%;
       height: 400px;
@@ -100,13 +98,11 @@ import { Pagination } from 'swiper/modules';
     }
   }
   .new_pjt {
-    background-color: yellow;
     padding: 50px;
     .swiper {
       height: 500px;
       .swiper-slide {
         width: 30%;
-        background-color: turquoise;
       }
       .swiper-slide:hover {
         border: 1px solid black;

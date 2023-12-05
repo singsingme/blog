@@ -5,6 +5,8 @@ import Calendar from '../components/Calendar.vue'
 </script>
 
 <template>
-  <Intro/>
-  <calendar/>
+  <div>
+    <Intro/>
+    <calendar/>
+  </div>
 </template>
