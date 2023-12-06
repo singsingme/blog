@@ -5,13 +5,26 @@
     <div class="month">월</div> -->
     <div class="container">
       <!-- <div>시각</div> -->
-      <div class="week" v-for="weeks in week" :key="idx">{{ weeks }}</div>
-      <div class="calender"></div>
+      <div class="calender">
+        <div class="week" v-for="weeks in week" :key="idx">{{ weeks }}</div>
+        <table>
+          <thead>
+            <th></th>
+          </thead>
+          <tbody>
+            <!-- 주 -->
+            <tr>
+              <!-- 날짜 -->
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
     <!-- 오늘날짜, 요일, 달 변경 버튼 -->
     <div class="controller">
       <h3>Today is ...</h3>
-      <div class="thisDate">{{ viewDate }} 일</div>
+      <div class="thisDate">{{  }} 일</div>
       <div class="day">{{  }}</div>
       <div class="btn">
         <div>previous</div>
@@ -37,19 +50,38 @@
 </template>
 
 <script setup>
-// 현재 날짜 및 시간
-const today = new Date();
-// [get은 반환, set은 대입의 역할]
-// 현재 날짜 가져오기
-const viewDate = today.getDate();
-// 현재 년도 가져오기
-const viewYear = today.getFullYear();
-// 현재 월 가져오기 (0 부터 시작함으로 이번달을 구하려면 + 1)
-const viewMonth = today.getMonth() + 1;
-// 현재 요일 가져오기
-const viewDay = today.getDay();
+import { ref, onMounted } from 'vue'
+onMounted(() => {
+  // 현재 날짜 및 시간
+  const date = new Date();
+  // [get은 반환, set은 대입의 역할]
+  // 현재 년도 가져오기
+  const viewYear = date.getFullYear();
+  // 현재 월 가져오기 (0 부터 시작함으로 이번달을 구하려면 + 1)
+  const viewMonth = date.getMonth() + 1;
+  // 현재 날짜 가져오기
+  const viewDate = date.getDate();
+})
+// const calendarData = (arg) => { // 인자를 추가
+//   if (arg < 0) { // -1이 들어오면 지난 달 달력으로 이동
+//     viewMonth -= 1; 
+//   } else if (arg === 1) { // 1이 들어오면 다음 달 달력으로 이동
+//     viewMonth += 1;
+//   }
+// }
 
+function calendarData() {
+  let [
+    monthFirstDay,
+    monthLastDay,
+    lastMonthLastDay,
+  ] = getFirstDayLastDate(viewYear, viewMonth);
+
+}
+
+// 요일 배열
 const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
 </script>
 
 <style lang="less" scoped>
